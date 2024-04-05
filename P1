@@ -1,0 +1,20 @@
+public class StringArraySort 
+{
+public static void main(String[] args) 
+{
+String[] stringArray = {"Banana", "Apple", "Orange", "Grape", "Kiwi"};
+for (int i = 0; i < stringArray.length - 1; i++) 
+{
+for (int j = i + 1; j < stringArray.length; j++) 
+{
+if (stringArray[i].compareTo(stringArray[j]) > 0) 
+{
+String temp = stringArray[i];
+stringArray[i] = stringArray[j];
+stringArray[j] = temp;
+}
+}
+}
+System.out.println("Sorted String Array: " + Arrays.toString(stringArray));
+}
+}
