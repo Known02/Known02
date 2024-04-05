@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+public class ListManipulation 
+{
+public static void main(String[] args) 
+{
+List<String> myList = new ArrayList<>();
+myList.add(0, "Element1");
+myList.add(0, "Element2");
+myList.add("Element3");
+myList.add("Element4");
+System.out.println("List before removal: " + myList);
+String firstElement = myList.remove(0);
+String lastElement = myList.remove(myList.size() - 1);
+System.out.println("List after removal: " + myList);
+System.out.println("First element removed: " + firstElement);
+System.out.println("Last element removed: " + lastElement);
+}
+}
