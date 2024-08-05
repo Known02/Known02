@@ -1,0 +1,46 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+def rotate_image(image, angle):
+    # Get the dimensions of the image
+    (h, w) = image.shape[:2]
+    
+    # Calculate the center of the image
+    center = (w // 2, h // 2)
+    
+    # Generate the rotation matrix
+    M = cv2.getRotationMatrix2D(center, angle, 1.0)
+    
+    # Perform the rotation
+    rotated = cv2.warpAffine(image, M, (w, h))
+    return rotated
+
+# Load the image
+image_path = 'F:/NCET/2023-24/2023-24 EVEN/Computer Vision with Machine Learning/Lab/LabPrograms/car-1.jpeg'  # Replace with your image path
+image = cv2.imread(image_path)
+
+# Specify the angle of rotation
+angle = 45  # Example angle
+
+# Rotate the image
+rotated_image = rotate_image(image, angle)
+
+# Display the original and rotated images
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1)
+plt.title('Original Image')
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.title('Rotated Image')
+plt.imshow(cv2.cvtColor(rotated_image, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+
+plt.show()
+
+# Save the rotated image
+rotated_image_path = 'F:/NCET/2023-24/2023-24 EVEN/Computer Vision with Machine Learning/Lab/LabPrograms/rotated_image.jpg'  # Replace with your desired save path
+cv2.imwrite(rotated_image_path, rotated_image)
