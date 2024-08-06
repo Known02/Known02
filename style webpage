@@ -1,0 +1,20 @@
+//app.js
+
+
+const App = () => {
+return (
+<div
+style={{
+display: "flex",
+alignItems: "center",
+justifyContent: "center",
+height: "100vh",
+backgroundImage:
+"linear-gradient(to right, #427ceb, #1dad6f)",
+}}
+>
+<h1 style={{ color: "white" }}>Welcome to NCET.</h1>
+</div>
+);
+};
+export default App;
