@@ -27,5 +27,5 @@ plt.axis('off')
 plt.show()
 
 
-blurred_image_path = 'F:/NCET/2023-24/2023-24 EVEN/Computer Vision with Machine Learning/Lab/LabPrograms/blurred_image.jpg'  # Replace with your desired save path
+blurred_image_path = 'blurred_image.jpg'  
 cv2.imwrite(blurred_image_path, blurred_image)
