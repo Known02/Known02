@@ -1,0 +1,26 @@
+import cv2
+import matplotlib.pyplot as plt
+
+image_path = 'path_to_your_image.jpg' 
+colored_image = cv2.imread(image_path)
+
+grayscale_image = cv2.cvtColor(colored_image, cv2.COLOR_BGR2GRAY)
+
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1)
+plt.title('Colored Image')
+plt.imshow(cv2.cvtColor(colored_image, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.title('Grayscale Image')
+plt.imshow(grayscale_image, cmap='gray')
+plt.axis('off')
+
+
+plt.show()
+
+
+grayscale_image_path = 'grayscale_image.jpg'  
+cv2.imwrite(grayscale_image_path, grayscale_image)
